@@ -8,12 +8,13 @@ public class Menu {
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            System.out.println("Select an action by entering its number\n" +
-                    "1. Encrypt text in a file with a key\n" +
-                    "2. Decrypt text in a file with a key \n" +
-                    "3. Pick up the key to the ciphertext in the file\n" +
-                    "4. Decrypt text in file using static enumeration\n" +
-                    "5. To exit the program");
+            System.out.println("""
+                    Select an action by entering its number
+                    1. Encrypt text in a file with a key
+                    2. Decrypt text in a file with a key\s
+                    3. Pick up the key to the ciphertext in the file
+                    4. Decrypt text in file using static enumeration
+                    5. To exit the program""");
 
             String answer = console.readLine();
 
@@ -24,10 +25,6 @@ public class Menu {
                 case ("4") -> new Parsing().parse();
                 case ("5") -> {return;}
             }
-
-
         }
-
-
     }
 }
