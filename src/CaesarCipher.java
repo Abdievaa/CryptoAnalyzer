@@ -7,12 +7,11 @@ public class CaesarCipher {
         return ALPHABET.length();
     }
 
-
     public String encrypt(String message, int key) {//AIDA, 30
         StringBuilder builder = new StringBuilder();
         char[] chars = message.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            int index = ALPHABET.indexOf(chars[i]);
+        for (char aChar : chars) {
+            int index = ALPHABET.indexOf(aChar);
             if (index >= 0) {
                 int newIndex = (index + key) % ALPHABET.length();
                 char charAt = newIndex < 0 ? ALPHABET.charAt(newIndex + ALPHABET.length()) : ALPHABET.charAt(newIndex);

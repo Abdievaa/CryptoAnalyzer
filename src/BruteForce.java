@@ -12,7 +12,7 @@ public class BruteForce {
     private final CaesarCipher cipher = new CaesarCipher();
 
     public void bruteForce() throws IOException {
-        System.out.println("Enter file path to decrypt it");
+        System.out.println("Enter the file path to decrypt it");
         String path = scanner.nextLine();
         Path result = PathHelper.buildFullName(path, "_bruteForcing");
 
@@ -30,7 +30,7 @@ public class BruteForce {
                 if (isValidateText(decrypt)) {
                     for (String string : list) {
                         String encrypt = cipher.decrypt(string, i);
-                        writer.write(encrypt+System.lineSeparator());
+                        writer.write(encrypt + System.lineSeparator());
                     }
                     System.out.println("Encrypt complite. Key = " + i);
                     break;
@@ -51,14 +51,13 @@ public class BruteForce {
             isValidate = true;
         }
         while (isValidate) {
-            System.out.println(text.substring(0,Math.min(text.length(),400)));
+            System.out.println(text.substring(0, Math.min(text.length(), 400)));
             System.out.println("Text is correct? (y/n)");
             String answer = scanner.nextLine();
             if (answer.equalsIgnoreCase("y")) {
                 return true;
             } else if (answer.equalsIgnoreCase("n")) {
                 isValidate = false;
-
             } else {
                 System.out.println("Please press only y or n");
             }
